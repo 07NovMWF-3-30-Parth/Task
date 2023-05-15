@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Function method excercise</h1>
+    <pre>
+// array for object litrals
+
+        // for loops- use it for (company array)
+        // for loops- use it for (company array for category only)
+        // for loops- use it for (company array for 'automobile' category only)
+        // find automobile companies with normal function with for loop and push the result in new array
+
+        // for each - use it for (company array), (name), (category), (start), (end)
+            // company array
+            // name
+            // category
+            // start
+            // end
+
+
+// filter method
+    // for companies array
+        // By using array - function & filter method
+            // category : automobile
+
+        // by using arrow function & filter method
+            // category : IT
+
+            // companies started in eighties
+
+            // lasted 10 years
+
+
+// map method (normal and arrow function)
+        // companies array
+            // create array of company name
+                // normal
+                // Arrow
+
+            // create array of 1
+                // normal
+                // arrow
+                
+            // create array for company with name nd [start and end year]
+                // normal
+                // arrow
+
+
+
+    // for ages array
+        // for loop for array for ages more than 21
+
+
+        // filter method for ages more than 21
+            // filter method normal function
+            // filter method arrow function
+
+        // map method
+            // map method sqrt of age
+            // map method age multiply by 2
+            // map method 2 times with different function
+
+// SORT method
+    // companies array
+        // ascending start year
+            // normal function
+            // arrow function
+
+    // for ages array
+        // sort array
+        // sort ascending order
+        // sort descending order
+
+
+// REDUCE method
+    // for companies array
+        // get total years for each companies 
+            // with callback function :
+            // with arrow function :
+
+    // for ages array
+        // total of age array with normal for loop
+
+        // adding by reduce with callback function
+
+        // adding by reduce with arrow function    
+
+    
+// combine method(map, filter, sort, reduce)
+    // ages array
+        // arrow function
+        
+        
+
+    </pre>
+</body>
+
+</html>
+
+<script>
+
+    const companies = [
+        { name: 'TATA company', category: 'finance', start: '1990', end: '2002' },
+        { name: 'RELIANCE company', category: 'retail', start: '1910', end: '2004' },
+        { name: 'MAHINDRA company', category: 'automobile', start: '2000', end: '2006' },
+        { name: 'HONDA company', category: 'automobile', start: '2005', end: '2008' },
+        { name: 'ADVANCED company', category: 'IT', start: '1995', end: '2012' },
+        { name: 'HYUNDAI company', category: 'automobile', start: '2000', end: '2010' },
+        { name: 'RISHABH company', category: 'IT', start: '2000', end: '2014' },
+        { name: 'TOPS company', category: 'IT', start: '2001', end: '2016' },
+        { name: 'TANISHQ company', category: 'Gold', start: '2010', end: '2018' },
+        { name: 'OLA company', category: 'automobile', start: '1980', end: '2020' }
+    ];
+
+    const ages = [21, 24, 10, 37, 12, 35, 52, 42, 18, 25];
+
+// for loops- use it for (company array) (object literal)
+    // for (let i=0; i<companies.length; i++)
+    // {
+    //     console.log(companies[i])
+    // }
+
+// for loops- use it for (company array for category only)
+        // for(let i=0; i<companies.length; i++)
+        // {
+        //     console.log(companies[i].category)
+        // }
+
+// for loops- use it for (company array for 'automobile' category only)
+    // for (let i=0; i<companies.length; i++)
+    // {
+    //     console.log(companies[i].category === 'automobile')
+    // }
+
+// find automobile companies with normal function with for loop and push the result in new array    
+    // function automobile(){                                  
+    //     let AutomobileCompanies = []; 
+    //     for(let i=0; i<companies.length; i++)
+    //     {
+    //         if(companies[i].category === 'automobile')
+    //         {
+    //             AutomobileCompanies.push(companies[i])
+    //         }
+    //     }
+    //     console.log(AutomobileCompanies)
+    // }
+    // automobile()
+
+
+
+// for each - use it for (company array), (name), (category), (start), (end)
+    // company array
+        // companies.forEach(function(company)
+        // {
+        //     console.log(company)
+        // })
+
+    // company name
+        // companies.forEach(function(company)
+        // {
+        //     console.log(company.name)
+        // })
+    
+    // company category    
+        // companies.forEach(function(company)
+        // {
+        //     console.log(company.category)
+        // })
+
+    // company start
+        // companies.forEach(function(company)
+        // {
+        //     console.log(company.start)
+        // })
+    
+    // company end    
+        // companies.forEach(function(company)
+        // {
+        //     console.log(company.end)
+        // })
+
+
+// By using array - callback function & filter method
+    // category : automobile
+        // let AutomobileCompanies = companies.filter(function(company)
+        // {
+        //     if(company.category === 'automobile')
+        //     {
+        //         return true
+        //     }
+        // })
+        // console.log(AutomobileCompanies)
+
+
+// by using arrow function & filter method
+    // category : IT
+        // let ITCompanies = companies.filter(company => company.category === 'IT')
+        // console.log(ITCompanies);
+
+    // companies started in 80s
+        // let eightiesCompanies = companies.filter(company => company.start>=1980 && company.start<=1990)
+        // console.log(eightiesCompanies)
+
+    // lasted 10 years
+        // let lasteTenYears = companies.filter(company => company.end-company.start>10)
+        // console.log(lasteTenYears)
+
+
+// map method
+    // create array of company name
+        // let companynames = companies.map(function(company)                 // callback function
+        // {
+        //     return company.name
+        // });
+        // console.log(companynames)
+
+    // arrow function    
+        // let companynames = companies.map(company => company.name)       // Arrow function
+        // console.log(companynames)
+
+    // create array of 1
+            // let onearray = companies.map(function(company)           // callback function
+            // {
+            //     return 'one'
+            // })
+            // console.log(onearray)
+
+        // arrow function
+            // let onearray = companies.map(company => 'i')                // Arrow function
+            // console.log(onearray)
+
+    // create array for company with name nd [start and end year]
+            // let CoInfo = companies.map(function(company)                // callback function
+            // {
+            //     return `${company.name}[${company.start}:${company.end}]`
+            // })
+            // console.log(CoInfo)
+
+        // arrow function    
+            // let CoInfo2 = companies.map(company => `${company.name}[${company.start}-${company.end}]`)  //Arrow function
+            // console.log(CoInfo2)
+
+
+
+// for array
+
+// for loop for array for ages more than 21
+            // let canDrink = []
+            // for(let i=0; i<ages.length; i++)                 // with for loop
+            // {
+            //     if(ages[i]>=21)
+            //     {
+            //         canDrink.push(ages[i])
+            //     }
+            // }
+            // console.log(canDrink)
+
+
+// filter method for ages more than 21
+            // let canDrink = ages.filter(function(age)             // filter method
+            // {
+            //     if(age >= 21)
+            //     {
+            //         return true;
+            //     }
+            // })
+            // console.log(canDrink)
+
+    // arrow function
+            // let canDrink = ages.filter(age => age>=21)           // arrow function
+            // console.log(canDrink)
+
+    // on array :>  map method sqrt of age  
+            // const agesqure = ages.map(age => Math.sqrt(age));
+            // console.log(agesqure);
+
+    // on array :>  map method age multiply by 2  
+            // const agesTimesTwo = ages.map(age => age*2);
+            // console.log(agesTimesTwo);
+
+    // on array :> map method 2 times with different function        
+            // const agemap = ages.map(age => Math.sqrt(age)).map(age => age*2);
+            // console.log(agemap);
+
+
+
+// SORT method
+    // companies array
+        // ascending start year
+        // const sortedcompanies = companies.sort(function(c1, c2)
+        //     {
+        //         // console.log('first',c1.name,c1.start, 'second', c2.name, c2.start)
+        //         if(c1.start > c2.start)
+        //         {
+        //             return 1;       // condition fulfiled den swap
+        //         } else {
+        //             return -1;      // or no swap
+        //         }
+        //     });
+        //     console.log(sortedcompanies)
+
+        // arrow function
+            // const sortedcompanies2 = companies.sort((a, b) => (a.start > b.start ? 1 : -1))
+            // console.log(sortedcompanies2);
+
+    // for ages array
+        // sort like 1, 11, 2, 22, 3, 33(check first letter first)
+            // const SortAges = ages.sort();
+            // console.log(SortAges)
+        
+        // sort ascending order    
+            // const SortAges = ages.sort((a,b) => a - b);
+            // console.log(SortAges);
+
+        // sort descending order    
+            // const SortAges3 = ages.sort ((a, b) => b - a);
+            // console.log(SortAges3);
+
+    
+// REDUCE
+    // for companies array
+        // get total years for each companies with callback function :
+            // const totalyears = companies.reduce(function(total, company)
+            // {
+            //     return total + (company.end - company.start);
+            // }, 0);
+            // console.log(totalyears);
+
+        // get total years for each companies with arrow function :
+            // const totalyears = companies.reduce((total, company) => total + (company.end - company.start), 0);
+            // console.log(totalyears);
+
+            
+        // for ages array
+            // total of age array with normal for loop
+            // let ageSum = 0;
+            // for(let i=0; i<ages.length; i++)
+            // {
+            //     ageSum = ageSum + ages[i];
+            // }
+            // console.log(ageSum);
+            
+            // adding by reduce with callback function
+                // const agesum = ages.reduce(function(total, age)
+                // {
+                //     return total + age;
+                // }, 0);
+                // console.log(agesum)
+            
+            // adding by reduce with arrow function    
+                // const agesum = ages.reduce((total, age) => total + age, 0);
+                // console.log(agesum)
+
+            
+    // Combine methods for ages array :
+            // const combined = ages.map(age => age*2)
+            //     .filter(age => age >= 40)
+            //     .sort((a, b) => a - b)
+            //     .reduce((a, b) => a + b, 0);
+
+            //     console.log(combined);
+
+// my practice
+
+// array for object litrals
+
+        // for loops- use it for (company array)
+            // for(let i=0; i<companies.length; i++)
+            // {
+            //     console.log(companies[i]);
+            // }
+        
+        // for loops- use it for (company array for category only)
+            // for(let i=0; i<companies.length; i++)
+            // {
+            //     console.log(companies[i].category)
+            // }
+        
+        // for loops- use it for (company array for 'automobile' category only)
+            // for(let i=0; i<companies.length; i++)
+            // {
+            //     if(companies[i].category === 'automobile'){
+            //         console.log(companies[i])
+            //     }
+            // }
+        
+        // find automobile companies with normal function with for loop and push the result in new array
+            // function autoMobileCo()
+            // {
+            //     let automobile = [];
+            //     for(let i=0; i<companies.length; i++)
+            //     {
+            //         if(companies[i].category === 'automobile')
+            //         {
+            //             automobile.push(companies[i])
+            //         }
+            //     }
+            //     console.log(automobile)
+            // }
+            // autoMobileCo()
+
+
+        // for each - use it for (company array), (name), (category), (start), (end)
+            // company array
+            //    companies.forEach(function(company){
+            //     console.log(company)
+            //    })
+
+            // name
+            //    companies.forEach(function(company){
+            //     console.log(company.name)
+            //    })
+
+            // category
+                // companies.forEach(function(company){
+                //     console.log(company.category)
+                // })
+
+            // start
+                // companies.forEach(function(company){
+                //     console.log(company.start)
+                // })    
+
+            // end
+                // companies.forEach(function(company){
+                //     console.log(company.end)
+                // })
+
+
+// filter method
+    // for companies array
+        // By using array - callback function & filter method
+            // category : automobile
+            let AutomobileCompanies = companies.filter(function(company){
+                if(company.category === 'automobile')
+                {
+                    return true
+                }
+            })
+            console.log(AutomobileCompanies)
+
+        // by using arrow function & filter method
+            // category : IT
+            let ITCompanies = companies.filter(company => company.category === 'IT')
+            console.log(ITCompanies)
+
+            // companies started in eighties
+
+            // lasted 10 years
+
+
+// map method (normal and arrow function)
+        // companies array
+            // create array of company name
+                // normal
+                // Arrow
+
+            // create array of 1
+                // normal
+                // arrow
+                
+            // create array for company with name nd [start and end year]
+                // normal
+                // arrow
+
+
+
+    // for ages array
+        // for loop for array for ages more than 21
+
+
+        // filter method for ages more than 21
+            // filter method normal function
+            // filter method arrow function
+
+        // map method
+            // map method sqrt of age
+            // map method age multiply by 2
+            // map method 2 times with different function
+
+// SORT method
+    // companies array
+        // ascending start year
+            // normal function
+            // arrow function
+
+    // for ages array
+        // sort array
+        // sort ascending order
+        // sort descending order
+
+
+// REDUCE method
+    // for companies array
+        // get total years for each companies 
+            // with callback function :
+            // with arrow function :
+
+    // for ages array
+        // total of age array with normal for loop
+
+        // adding by reduce with callback function
+
+        // adding by reduce with arrow function    
+
+    
+// combine method(map, filter, sort, reduce)
+    // ages array
+        // arrow function
+        
+        
+
+
+</script>

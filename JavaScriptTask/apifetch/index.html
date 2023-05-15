@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="weather">
+        <div id="description"></div>
+        <h1 id="temp"></h1>
+        <div id="location"></div>
+    </div>
+</body>
+
+</html>
+
+
+<script lang="text/javascript">
+    function weatherBalloon() {
+        var key = '991f23912cbd0e195bf9f2c903c8b293';
+        fetch('https://api.openweathermap.org/data/2.5/weather?q=rajkot&appid=991f23912cbd0e195bf9f2c903c8b293')
+            .then(function (resp) { return resp.json() }) // Convert data to json
+            .then(function (data) {
+                console.log(data.main);
+                console.log(data.name);
+                console.log(data.weather);
+                console.log(data.wind);
+            })
+            .catch(function () {
+                // catch any errors
+            });
+    }
+
+    window.onload = function () {
+        weatherBalloon();
+    }
+
+
+</script>
+
+<script src="script.js"></script>

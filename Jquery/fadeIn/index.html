@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade in method</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        span {
+            color: red;
+            cursor: pointer;
+        }
+
+        /* .container {
+            height: 200px;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+        } */
+
+        div {
+            margin: 3px;
+            width: 80px;
+            display: none;
+            height: 80px;
+            float: left;
+        }
+
+        /* .box { */
+            /* height: 100px; */
+            /* width: 100px; */
+            /* margin: 10px; */
+            /* background-color: gray; */
+        /* } */
+
+        #one {
+            background-color: red;
+        }
+
+        #two {
+            background-color: green;
+        }
+
+        #three {
+            background-color: blue;
+        }
+
+        #four {
+            background-color: violet;
+        }
+
+        #five {
+            background-color: purple;
+        }
+
+        #six {
+            background-color: peru;
+        }
+        #seven {
+            background-color: peru;
+        }
+        #eight {
+            background-color: peru;
+        }
+        #nine {
+            background-color: peru;
+        }
+        #ten {
+            background-color: peru;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fade in Method</h1>
+    <hr>
+    <span>Click here...</span>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+    <div id="six"></div>
+    <div id="seven"></div>
+    <div id="eight"></div>
+    <div id="nine"></div>
+    <div id="ten"></div>
+    <hr><button id="btn">click</button>
+    <script>
+        $("#btn").click(function () {
+            $("div:hidden").first().fadeIn("slow");
+        });
+    </script>
+</body>
+
+</html>

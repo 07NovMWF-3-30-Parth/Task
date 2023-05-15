@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS Task - Car speed</title>
+</head>
+
+<body>
+    <pre>
+    constructor function for a car
+    speed property in km/h
+    
+    Task :-    
+        accelerate : increase speed 10
+        console.log(speed)
+        
+        brake : decrease speed 5
+        console.log(speed)
+    
+    2 objects :-    
+        obj 1 BMW at 120
+        obj 2 Mercedes at 95
+</pre>
+
+
+</body>
+
+</html>
+
+<script>
+    // // this is done by me different way
+    // function car(name, speed) {
+    //     this.name = name;
+    //     this.speed = speed;
+    //     accelerate = function () {
+    //         console.log(speed + 10)
+    //     }
+    //     brake = function () {
+    //         console.log(speed - 5)
+    //     }
+
+    //     console.log(`${name} is going with ${speed} km/h speed`)
+    // }
+
+    // const BMW = new car('BMW', 120)
+    // accelerate()
+    // brake()
+
+    // const Mercedes = new car("Mercedes", 95)
+    // accelerate()
+    // brake()
+
+// THIS IS DONE BY SONU SIR
+
+    // const car = function(make, speed){
+    //     this.make = make;
+    //     this.speed = speed
+    // };
+
+    // car.prototype.accelerate = function(){
+    //     this.speed += 10;
+    //     console.log(`${this.make} is going at ${this.speed} km/h(up).`);
+    // };
+
+    // car.prototype.brake = function(){
+    //     this.speed -= 5;
+    //     console.log(`${this.make} is going at ${this.speed} km/h(down).`);
+    // };
+
+    // const bmw = new car ("BMW", 120)
+    // const mercedes = new car ("Mercedes", 95)
+
+    // bmw.accelerate()
+    // bmw.accelerate()
+    // bmw.brake()
+    // bmw.accelerate()
+    
+    // mercedes.brake()
+    // mercedes.brake()
+    // mercedes.accelerate()
+    // mercedes.brake()
+
+
+/*
+ASSESSMENT GIVEN BY SONU SIR - coding challenge #1
+
+(1) re-create challenge 1, but this time using an ES6 class;
+(2) Add a getter called 'speedUS' which returns the current speed in mi/h (divide by 1.6);
+(3) Add a setter called 'speedUS' which sets the current speed in mi/h (but converts it to km/h before storing the value, by multiplying the input by 1.6)
+(4) Create a new car and experiment with the accelerate and brake methods, and with the getter and setter.
+
+obj :- CAR 1 : 'FORD' going at 120 km/h
+*/
+class car {
+    constructor(make, speed){
+    this.make = make
+    this.speed = speed
+    }
+
+    
+    get SpeedUS() 
+    {
+        return this.speed /= 1.6;
+    }
+    
+    set SpeedUS(value){
+        this.speed *= 1.6;
+    }
+    accelerate(){
+        this.speed += 10
+        console.log(`${this.make} speed increased at ${this.speed}`);
+    }
+
+    brake(){
+        this.speed -= 5;
+        console.log(`${this.make} speed decreased at ${this.speed}`);
+    }
+}
+
+const ford = new car ("FORD", 120)
+// ford.SpeedUS
+// ford.brake()
+// ford.accelerate()
+// ford.SpeedUS = 40
+// ford.accelerate()
+// ford.brake()
+
+/*
+ASSESSMENT GIVEN BY SONU SIR - coding challenge #2
+
+(1) Use a constructor function to implement an Electric Car (called EV) as a CHILD "class" of a Car. Besides a make and current speed, the EV also has the current battery charge in % ('charge' property);
+(2) Implement a "chargeBattery" method which takes an argument 'chargeTo' and sets the battery charge to 'chargeTo';
+(3) Implement an 'accelerate' method that will increase the car's speed by 20, and decrease the charge by 1%.
+Then log a message like this: 'Tesla going at 140 km/h, with a charge of 22%';
+(4) Create an electric car object and experiment with calling 'accelerate', 'brake' and 'chargeBattery' (charge to 90%). Notice what happens when you 'accelerate'! HINT: Review the definition of Polymorphism ;)
+
+obj :- CAR1 : 'TESLA' going at 120 km/h, with a charge of 23%
+
+*/
+class EV extends car {
+    constructor(make, speed, charge){
+        super(make, speed)
+        this.charge = charge;
+    }
+
+    chargebattery(chargeTo){
+        console.log(`Please charge the Battery of ${this.make} car`)
+    }
+    
+    accelerate(){
+        this.speed += 20
+        this.charge -= 1
+        console.log(`${this.make} car going at ${this.speed} km/h with a charge of ${this.charge}%`);
+    }
+
+}
+
+const Tesla = new EV ("Tesla", 120, 23)
+// Tesla.chargebattery()
+// Tesla.accelerate()
+// Tesla.brake()
+// Tesla.SpeedUS
+// Tesla.SpeedUS = 200
+// Tesla.accelerate()
+
+
+</script>
