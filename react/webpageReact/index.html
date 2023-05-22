@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Webpage</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/jsx">
+        
+        const root = ReactDOM.createRoot(
+            document.getElementById('root')
+        );
+
+        const DOMElement = 
+            <div className = "rootElement">
+                <header>
+                    <nav>
+                        <div className = "nav-image">
+                            <h3><span>D</span>holakiya</h3>
+                        </div>
+                        <div className = "nav-menu">
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <hr/>
+                    <main>
+                        <div className="row">
+                            <div className="col-50">
+                                <h1>Welcome to React Webpage</h1>
+                                <h4>(Where everything created with ReactDOM)</h4>
+                            </div>
+                            <div className="col-50">
+                                <img src="images/React-icon.svg.png" alt="" width='50%' />
+                            </div>
+                        </div>
+                    </main>
+                </header>
+                <hr/>
+                <footer>
+                    <div className="social">
+                        <a href=""><img src="images/facebook logo.png" alt="" /></a>
+                        <a href=""><img src="images/instagram logo.png" alt="" /></a>
+                        <a href=""><img src="images/linked in logo.jpg" alt="" /></a>
+                        <a href=""><img src="images/twitter logo.png" alt="" /></a>
+                        <a href=""><img src="images/youtube logo.png" alt="" /></a>
+                    </div>
+                    <hr/>
+                    <div className="foot">
+                        <p>2023 Copyright: Dholakiya group of Companies</p>
+                    </div>
+                </footer>
+                
+            </div>
+
+            root.render(DOMElement)
+
+
+
+    </script>
+</body>
+
+</html>

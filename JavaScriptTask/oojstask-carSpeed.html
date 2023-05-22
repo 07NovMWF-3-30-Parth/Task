@@ -106,9 +106,11 @@ class car {
         return this.speed /= 1.6;
     }
     
-    set SpeedUS(value){
+    set SpeedUS(value)
+    {
         this.speed *= 1.6;
     }
+    
     accelerate(){
         this.speed += 10
         console.log(`${this.make} speed increased at ${this.speed}`);
@@ -127,6 +129,14 @@ const ford = new car ("FORD", 120)
 // ford.SpeedUS = 40
 // ford.accelerate()
 // ford.brake()
+
+// console.log(ford.SpeedUS)
+// ford.accelerate();
+// ford.accelerate();
+// ford.brake();
+// ford.SpeedUS = 50;
+// console.log(ford);
+
 
 /*
 ASSESSMENT GIVEN BY SONU SIR - coding challenge #2
@@ -166,5 +176,45 @@ const Tesla = new EV ("Tesla", 120, 23)
 // Tesla.SpeedUS = 200
 // Tesla.accelerate()
 
+
+
+
+// new task done with prototype
+
+// constructor function and the new operator
+const Person = function (firstname, birthyear){
+    // instance properties
+    this.firstname = firstname;
+    this.birthyear = birthyear;
+
+    // never to this!
+    // this.calcAge = function () {
+    //     console.log(2037 - birthyear);
+    // };
+};
+
+const jonas = new Person ('Jonas', 1991)
+// console.log(jonas);
+
+
+Person.hey = function(){
+    console.log("hey there")
+    console.log(this)
+}
+// Person.hey()
+
+console.log(Person.prototype)   // person object prototype
+
+Person.prototype.calcAge = function () {
+    console.log(2023 - this.birthyear) // find age
+}
+
+jonas.calcAge();
+
+console.log(jonas.__proto__) // find jonas person's prototype
+
+console.log(jonas.__proto__ === Person.prototype) // true
+
+console.log(Person.prototype.isPrototypeOf(jonas)); // true
 
 </script>
